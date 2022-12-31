@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=`, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather App</title>
     <link rel="stylesheet" href="src/style.css" />
     <link
@@ -12,6 +12,7 @@
       integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div id="root">
@@ -39,13 +40,16 @@
             <div class="WeatherInfo">
               <div class="row">
                 <div class="col-6">
-                  <h1>Budapest</h1>
+                  <h1 id="city"></h1>
                   <ul>
-                    <li><span> Friday 14:17</span>, mist</li>
+                    <li>
+                      <span> Friday 14:17</span>,
+                      <span id="description"></span>
+                    </li>
                     <li>
                       Humidity:
-                      <strong>95%</strong>, Wind:
-                      <strong>6.17 km/h</strong>
+                      <strong><span id="humidity"></span>%</strong>, Wind:
+                      <strong><span id="wind"></span> km/h</strong>
                     </li>
                   </ul>
                 </div>
@@ -53,7 +57,7 @@
                   <div class="temperature-container d-flex justify-content-end">
                     <canvas width="52" height="52"></canvas>
                     <div>
-                      <span class="temperature">14</span>
+                      <span class="temperature" id="currentTemperature"></span>
                       <span class="unit">°C | °F</span>
                     </div>
                   </div>
@@ -120,5 +124,6 @@
         </div>
       </div>
     </div>
+    <script src="src/script.js"></script>
   </body>
 </html>
