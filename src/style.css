@@ -172,3 +172,12 @@
   margin-bottom: 0px;
   text-align: center;
 }
+
+.unit .active {
+  color: #22313f;
+  cursor: default;
+}
+
+.unit .active:hover {
+  text-decoration: none;
+}
