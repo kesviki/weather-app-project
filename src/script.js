@@ -23,6 +23,34 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="WeatherForecast row" id="forecast">`;
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+              <div class="col">
+                <div class="WeatherForecastPreview">
+                  <div class="forecast-time">${day}</div>
+                  <img
+                    src="http://openweathermap.org/img/wn/10d@2x.png"
+                    width="80"
+                    height="80"
+                  />
+                  <div class="forecast-temperature">
+                    <span class="forecast-temperature-max">14°</span>
+                    <span class="forecast-temperature-min">12°</span>
+                  </div>
+                </div>
+              </div>
+  `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function displayTemperature(response) {
   let currentTemperatureElement = document.querySelector("#currentTemperature");
   currentTemperatureElement.innerHTML = Math.round(response.data.main.temp);
@@ -88,3 +116,5 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 search("Budapest");
+
+displayForecast();
