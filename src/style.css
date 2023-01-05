@@ -1,3 +1,12 @@
+html,
+body {
+  background-color: #22313fc8;
+}
+
+#root {
+  background-color: #22313fc8;
+}
+
 .App {
   margin: 60px auto;
   max-width: 800px;
@@ -6,7 +15,7 @@
 }
 
 .Weather {
-  background: #e4f1fe;
+  background: #ffffff;
   border-radius: 16px;
   box-shadow: 0 30px 50px rgb(65 50 100 / 8%);
   color: #c5e2ff;
@@ -16,7 +25,7 @@
 }
 
 .Weather form {
-  border-bottom: 1px solid #e4f1fe;
+  border-bottom: 1px solid #f9f7fe;
   margin-top: 0px;
   padding-bottom: 30px;
 }
